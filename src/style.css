@@ -1,8 +1,6 @@
 body {
 	font: 10pt arial;
 }
-#mynetwork {
-	width: 600px;
-	height: 600px;
+#network {
 	border: 1px solid lightgray;
 }
