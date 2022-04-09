@@ -1,42 +1,11 @@
-import { Data, DataSet, Edge, Network } from "../node_modules/vis-network/standalone/umd/vis-network"
+import { Data, DataSet, Edge, Node, Network } from "../node_modules/vis-network/standalone/umd/vis-network"
 import StoryNetwork from "./StoryNetwork";
 require("!style-loader!css-loader!./style.css");
 
-console.log("Hello, world")
+const container = document.getElementById("network");
 
-const nodes = new DataSet([
-	{
-		id: 1,
-		shape: "image",
-		size: 20,
-		label: "Hello",
-		image: {
-			unselected: "img/unselected.svg",
-			selected: "img/selected.svg",
-		},
-	},
-	{
-		id: 2,
-		shape: "image",
-		size: 20,
-		label: "World",
-		image: {
-			unselected: "img/unselected.svg",
-			selected: "img/selected.svg",
-		},
-	},
-])
-
-const edges: Edge[] = [
-	{ from: 1, to: 2 }
-]
-
-const container = document.getElementById("network")
-
-const data: Data = {
-	nodes: nodes,
-	edges: edges,
-}
+const storyNetwork = new StoryNetwork();
+let characterPromise = storyNetwork.getCharacters();
 
 const options = {
 	layout: {
@@ -45,9 +14,15 @@ const options = {
 	nodes: {
 		brokenImage: "img/broken.svg"
 	}
-}
+};
 
-const network = new Network(container!, data, options)
+(async () => {
+	await Promise.all([characterPromise]);
 
-const storyNetwork = new StoryNetwork();
-storyNetwork.getCharacters();
+	const network = new Network(container!, storyNetwork, options)
+})();
+
+// const edges: Edge[] = [
+// 	{ from: 1, to: 2 },
+// ]
+

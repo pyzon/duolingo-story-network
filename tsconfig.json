@@ -10,6 +10,7 @@
 		"target": "es5",
 		"allowJs": true,
 		"esModuleInterop": true,
+		"watch": true,
 	},
 	"include": [
 		"./src/**/*"

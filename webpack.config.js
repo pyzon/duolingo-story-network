@@ -38,7 +38,8 @@ const config = {
       '.ts',
       '.js'
     ]
-  }
+  },
+  watch: true,
 };
 
 module.exports = config;
