@@ -19,7 +19,7 @@ export default class Character implements Node {
 		this.image = `faces/${pictureId}.svg`;
 		if (color) {
 			const ccolor = Color.rgb(colorString.get.rgb(color));
-			this.color = ccolor.desaturate(0.1 * ccolor.saturationl() / 100).lighten(0.35 * (ccolor.saturationv() * (100 - ccolor.luminosity()) / 10000)).hex();
+			this.color = ccolor.desaturate(0.1 * ccolor.saturationl() / 100).mix(Color.rgb(255, 255, 255)).hex();
 		}
 
 		const basePadding = 0.5;
