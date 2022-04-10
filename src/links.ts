@@ -1,1 +1,2 @@
 export const charactersUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRcOv8XnUdOi92UC7M38z2-MvZqkgMghBaV1HbY0kysPY77vD8_Nx8vzTt_0Sr5g1f8jfu-ss2V77c6/pub?gid=1134779877&single=true&output=csv";
+export const connectionsUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRcOv8XnUdOi92UC7M38z2-MvZqkgMghBaV1HbY0kysPY77vD8_Nx8vzTt_0Sr5g1f8jfu-ss2V77c6/pub?gid=708342278&single=true&output=csv";

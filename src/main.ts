@@ -6,6 +6,7 @@ const container = document.getElementById("network");
 
 const storyNetwork = new StoryNetwork();
 let characterPromise = storyNetwork.getCharacters();
+let connectionPromise = storyNetwork.getConnections()
 
 const options = {
 	layout: {
@@ -17,12 +18,8 @@ const options = {
 };
 
 (async () => {
-	await Promise.all([characterPromise]);
+	await Promise.all([characterPromise, connectionPromise]);
 
-	const network = new Network(container!, storyNetwork, options)
+	const network = new Network(container!, storyNetwork, options);
 })();
-
-// const edges: Edge[] = [
-// 	{ from: 1, to: 2 },
-// ]
 
