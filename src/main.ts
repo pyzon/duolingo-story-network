@@ -1,4 +1,4 @@
-import { Data, DataSet, Edge, Node, Network } from "../node_modules/vis-network/standalone/umd/vis-network"
+import { Data, DataSet, Edge, Node, Network, Options } from "../node_modules/vis-network/standalone/umd/vis-network"
 import StoryNetwork from "./StoryNetwork";
 require("!style-loader!css-loader!./style.css");
 
@@ -8,13 +8,13 @@ const storyNetwork = new StoryNetwork();
 let characterPromise = storyNetwork.getCharacters();
 let connectionPromise = storyNetwork.getConnections()
 
-const options = {
+const options: Options = {
 	layout: {
 		randomSeed: 5,
 	},
-	nodes: {
-		brokenImage: "img/broken.svg"
-	}
+	physics: {
+		solver: "forceAtlas2Based",
+	},
 };
 
 (async () => {
